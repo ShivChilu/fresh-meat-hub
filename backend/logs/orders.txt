@@ -1,0 +1,13 @@
+
+=====================================
+Order ID: b5a69fb0-d379-4636-b409-2245f57d2e0b
+Date: 2025-12-19T09:11:53.156315+00:00
+Customer: ahisdih
+Phone: 7986955634
+Address: sdfasdfcas
+Pincode: 500001
+Items: chicken x1
+Total: ₹250.0
+Payment: Cash on Delivery
+Status: PENDING
+=====================================
