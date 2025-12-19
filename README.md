@@ -202,9 +202,42 @@ Default admin PIN: **4242**
 }
 ```
 
+## 🚀 Deployment
+
+### Deploy to Render
+
+This application is ready to deploy on Render (free tier available):
+
+1. **Quick Start**: Follow [DEPLOYMENT_CHECKLIST.md](./DEPLOYMENT_CHECKLIST.md)
+2. **Detailed Guide**: See [RENDER_DEPLOYMENT_GUIDE.md](./RENDER_DEPLOYMENT_GUIDE.md)
+3. **One-Click Deploy**: Use `render.yaml` for automated setup
+
+**What you'll need:**
+- GitHub account
+- Render account (free)
+- MongoDB Atlas account (free)
+
+**Deployment time:** ~15 minutes
+
+### Deploy to Other Platforms
+
+- **Vercel**: Deploy frontend only (backend requires separate hosting)
+- **Heroku**: Both frontend and backend can be deployed
+- **AWS/GCP/Azure**: Use EC2/Compute Engine/VM instances
+- **DigitalOcean**: Use App Platform or Droplets
+
+See deployment guide for platform-specific instructions.
+
 ## 🎯 Migration from FastAPI
 
 This application was successfully migrated from FastAPI (Python) to Express.js (Node.js). See [MIGRATION_SUMMARY.md](./MIGRATION_SUMMARY.md) for detailed migration notes.
+
+## 📚 Documentation
+
+- **[README.md](./README.md)** - This file (overview and setup)
+- **[RENDER_DEPLOYMENT_GUIDE.md](./RENDER_DEPLOYMENT_GUIDE.md)** - Complete Render deployment guide
+- **[DEPLOYMENT_CHECKLIST.md](./DEPLOYMENT_CHECKLIST.md)** - Step-by-step deployment checklist
+- **[MIGRATION_SUMMARY.md](./MIGRATION_SUMMARY.md)** - FastAPI to Express.js migration notes
 
 ## 📄 License
 
