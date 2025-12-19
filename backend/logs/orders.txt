@@ -24,3 +24,16 @@ Total: ₹598
 Payment: Cash on Delivery
 Status: PENDING
 =====================================
+
+=====================================
+Order ID: 67e5cdd9-c0ad-46f2-a287-9483c680e62a
+Date: 2025-12-19T12:37:13.656Z
+Customer: sdajdsd
+Phone: 7986955634
+Address: asdfasduh  dsf sdf jdsdsfds ds
+Pincode: 500001
+Items: Chicken Breast x1
+Total: ₹299
+Payment: Cash on Delivery
+Status: PENDING
+=====================================
