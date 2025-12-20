@@ -37,7 +37,7 @@ mongoose.connect(`${MONGO_URL}/${DB_NAME}`)
 const ADMIN_PIN = process.env.ADMIN_PIN || '4242';
 
 // Serviceable pincodes
-const SERVICEABLE_PINCODES = ['500001', '500002', '500003', '500004'];
+const SERVICEABLE_PINCODES = ['144411', '144401', '144402'];
 
 // ===================== MONGOOSE SCHEMAS =====================
 
