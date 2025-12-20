@@ -63,7 +63,7 @@ export const Header = () => {
           <div className="flex items-center gap-2">
             {/* Contact */}
             <a
-              href="tel:+917986955634"
+              href="tel:+918603160441"
               className="hidden sm:flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:text-primary transition-colors"
               data-testid="header-phone"
             >
