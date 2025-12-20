@@ -64,7 +64,7 @@ const HomePage = () => {
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
-            <a href="tel:+917986955634">
+            <a href="tel:+918603160441">
               <Button variant="outline" className="rounded-full bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 px-8 py-6 text-lg font-semibold" data-testid="call-now-btn">
                 <Phone className="w-5 h-5 mr-2" />
                 Call Now
@@ -193,7 +193,7 @@ const HomePage = () => {
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
-            <a href="https://wa.me/917986955634?text=Hi! I'd like to know more about your products." target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/918603160441?text=Hi! I'd like to know more about your products." target="_blank" rel="noopener noreferrer">
               <Button variant="outline" className="rounded-full border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg font-semibold" data-testid="whatsapp-btn">
                 Chat on WhatsApp
               </Button>
@@ -213,7 +213,7 @@ const HomePage = () => {
           </div>
           
           <div className="flex flex-wrap justify-center gap-4">
-            {['500001', '500002', '500003', '500004'].map((pincode) => (
+            {['144411', '144401', '144402'].map((pincode) => (
               <div
                 key={pincode}
                 className="px-6 py-3 bg-green-50 border border-green-200 rounded-full text-green-700 font-semibold"
@@ -224,7 +224,7 @@ const HomePage = () => {
           </div>
           
           <p className="text-center text-gray-500 text-sm mt-6">
-            Don't see your area? Call us at <a href="tel:+917986955634" className="text-primary font-medium">+91 79869 55634</a>
+            Don't see your area? Call us at <a href="tel:+918603160441" className="text-primary font-medium">+91 79869 55634</a>
           </p>
         </div>
       </section>
