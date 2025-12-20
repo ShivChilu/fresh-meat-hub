@@ -320,7 +320,7 @@ Please confirm this order. Thank you! 🙏`;
                   </p>
                 )}
                 <p className="text-xs text-gray-500 mt-2">
-                  Serviceable pincodes: 500001, 500002, 500003, 500004
+                  Serviceable pincodes:144411,144401,144402
                 </p>
               </div>
 
