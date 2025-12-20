@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { CheckCircle, Home, MessageCircle, Phone } from 'lucide-react';
 import { Button } from '../components/ui/button';
 
-const WHATSAPP_NUMBER = '917986955634';
+const WHATSAPP_NUMBER = '918603160441';
 
 const OrderSuccessPage = () => {
   return (
@@ -83,7 +83,7 @@ const OrderSuccessPage = () => {
         {/* Contact Info */}
         <p className="text-sm text-gray-500 mt-8">
           Need help? Call us at{' '}
-          <a href="tel:+917986955634" className="text-primary font-medium">
+          <a href="tel:+918603160441" className="text-primary font-medium">
             <Phone className="w-3 h-3 inline mr-1" />
             +91 79869 55634
           </a>
