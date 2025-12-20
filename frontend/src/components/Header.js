@@ -68,7 +68,7 @@ export const Header = () => {
               data-testid="header-phone"
             >
               <Phone className="w-4 h-4" />
-              <span className="hidden lg:inline">+91 79869 55634</span>
+              <span className="hidden lg:inline">+91 86031 60441</span>
             </a>
 
             {/* Cart */}
