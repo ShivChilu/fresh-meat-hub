@@ -224,7 +224,7 @@ const HomePage = () => {
           </div>
           
           <p className="text-center text-gray-500 text-sm mt-6">
-            Don't see your area? Call us at <a href="tel:+918603160441" className="text-primary font-medium">+91 79869 55634</a>
+            Don't see your area? Call us at <a href="tel:+918603160441" className="text-primary font-medium">+91 86031 60441</a>
           </p>
         </div>
       </section>
