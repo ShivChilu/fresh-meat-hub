@@ -1,0 +1,127 @@
+{
+  "project_name": "Fresh Meat Hub",
+  "design_philosophy": {
+    "theme": "The Modern Butcher",
+    "vibe": "Artisanal, Hygienic, Trustworthy, Premium yet Accessible",
+    "core_principle": "Elevate the raw product. Meat is the hero. Red is the passion, White is the hygiene.",
+    "anti_patterns": [
+      "Generic supermarket grids",
+      "Sterile medical white backgrounds",
+      "Bright 'Error' Red (#FF0000)",
+      "Cluttered navigation on mobile"
+    ]
+  },
+  "typography": {
+    "font_family": {
+      "heading": "Playfair Display, serif",
+      "body": "Manrope, sans-serif",
+      "accent": "Fraunces, serif"
+    },
+    "instructions": "Import 'Playfair Display' (weights: 400, 700) and 'Manrope' (weights: 400, 500, 600) from Google Fonts. Use Playfair for all H1-H3 headings to give that 'premium butcher shop' feel. Use Manrope for all UI text, prices, and descriptions.",
+    "scale": {
+      "h1": "text-4xl md:text-6xl font-bold tracking-tight",
+      "h2": "text-3xl md:text-4xl font-bold tracking-tight",
+      "h3": "text-2xl font-semibold",
+      "body": "text-base leading-relaxed",
+      "caption": "text-sm text-muted-foreground"
+    }
+  },
+  "colors": {
+    "palette": {
+      "primary": {
+        "DEFAULT": "#991B1B",
+        "foreground": "#FFFFFF",
+        "description": "Crimson Red / Dried Blood - The color of fresh, high-quality meat. NOT bright red."
+      },
+      "secondary": {
+        "DEFAULT": "#FDFBF7",
+        "foreground": "#1F2937",
+        "description": "Bone White / Warm Cream - A softer, more organic alternative to pure white."
+      },
+      "accent": {
+        "DEFAULT": "#166534",
+        "foreground": "#FFFFFF",
+        "description": "Herb Green - For freshness indicators, 'In Stock' badges, and veg items."
+      },
+      "background": "#FDFBF7",
+      "foreground": "#1F2937",
+      "muted": "#F3F4F6",
+      "border": "#E5E7EB"
+    },
+    "usage_rules": "Use Primary Red for 'Add to Cart' buttons, Price tags, and key CTAs. Use Bone White for the main page background. Use pure White (#FFFFFF) only for Card backgrounds to make them pop against the Bone White page."
+  },
+  "layout": {
+    "grid_system": "Mobile-first. Single column on mobile (grid-cols-1), Bento-style or 3-4 columns on desktop (md:grid-cols-3 lg:grid-cols-4).",
+    "spacing": "Generous. Use p-6 or p-8 for containers. Gap-6 for grids.",
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "mobile_nav": "Fixed bottom navigation bar for mobile users (Home, Categories, Cart, Profile/Admin). This is crucial for the 'App-like' feel."
+  },
+  "components": {
+    "buttons": {
+      "style": "rounded-full font-medium transition-all active:scale-95",
+      "primary": "bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20",
+      "secondary": "bg-white text-foreground border border-input hover:bg-accent hover:text-accent-foreground"
+    },
+    "cards": {
+      "product": "bg-white rounded-xl shadow-sm border border-border/50 overflow-hidden hover:shadow-md transition-shadow group",
+      "category": "relative overflow-hidden rounded-2xl aspect-[4/5] group cursor-pointer"
+    },
+    "inputs": {
+      "style": "rounded-lg border-input bg-white px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+    }
+  },
+  "visual_enhancers": {
+    "texture": "Use subtle noise or grain on the Bone White background if possible, or keep it clean. Use the 'Spices' image as a parallax section background.",
+    "shadows": "Soft, diffuse shadows (shadow-lg) for floating elements like the Cart sheet or Mobile Nav.",
+    "borders": "1px borders in very light gray (#E5E7EB) to define structure without heaviness."
+  },
+  "image_urls": {
+    "hero": {
+      "url": "https://images.unsplash.com/photo-1591978108398-fbf8f7128bf0",
+      "alt": "Premium cuts of meat on a wooden board",
+      "usage": "Hero section background with dark overlay (bg-black/50)"
+    },
+    "categories": {
+      "chicken": "https://images.unsplash.com/photo-1584932894085-f095355f4c40",
+      "mutton": "https://images.pexels.com/photos/13640373/pexels-photo-13640373.jpeg",
+      "fish": "https://images.unsplash.com/photo-1587279733259-26c7d2c0dba5",
+      "prawns": "https://images.unsplash.com/photo-1566575167524-1b8b9c66c30d",
+      "eggs": "https://images.unsplash.com/photo-1585355611266-f01530088d60",
+      "spices": "https://images.unsplash.com/photo-1677599082447-6549af4c5454"
+    },
+    "placeholders": {
+      "product": "https://images.unsplash.com/photo-1615937662601-4724eceda00f"
+    }
+  },
+  "instructions_to_main_agent": [
+    "1. SETUP: Install 'lucide-react' for icons. Import fonts in index.css.",
+    "2. THEME: Update tailwind.config.js to use the custom colors defined above (Primary: #991B1B, Background: #FDFBF7).",
+    "3. LAYOUT: Build a 'MobileNav' component fixed at the bottom for screens < md.",
+    "4. HOME: Create a Hero section using the 'hero' image. Text should be 'Fresh Meat, Delivered to Your Door'.",
+    "5. PRODUCTS: Use the 'cards.product' style. Display 'Weight' and 'Price' clearly. Add to Cart button should be prominent.",
+    "6. CART: Use a Sheet (Side drawer) for the cart. Checkout flow is: Review Items -> Enter Pincode (Validate 500001-500004) -> Enter Address -> WhatsApp Redirect.",
+    "7. ADMIN: Simple PIN entry screen (centered, minimal). Dashboard should show orders in a table.",
+    "8. DATA: Mock the product data initially, but structure it for the backend (id, name, category, price, stock, image).",
+    "9. CRITICAL: Ensure the 'Red' is the deep crimson specified, NOT default Tailwind red-500."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy",
+    "Use glass-morphism effects with backdrop filters (12-24px blur)",
+    "You MUST NOT apply universal transition. Eg: transition: all. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file. This disrupts the human natural reading flow of text",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯📚🎭🎬🎪🎉🎊🎁🎀🎂🍰🎈🎨🎰💰💵💳🏦💎🪙💸🤑📊📈📉💹🔢🏆🥇 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "Main agent relies on these image URLs. Missing categories (especially sponsor logos) = main agent will use placeholder text which is FORBIDDEN",
+    "Prioritize using pre-existing components from src/components/ui when applicable",
+    "Create new components that match the style and conventions of existing components when needed",
+    "Examine existing components to understand the project's component patterns before creating new ones",
+    "Components MUST use named exports (export const ComponentName = ...)",
+    "Pages MUST use default exports (export default function PageName() {...})",
+    "Use 'sonner' for toasts. Sonner component are located in /app/src/components/ui/sonner.tsx"
+  ]
+}

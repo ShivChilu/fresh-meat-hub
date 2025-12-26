@@ -1,0 +1,39 @@
+services:
+  # Backend API Service
+  - type: web
+    name: fresh-meat-hub-backend
+    runtime: node
+    env: node
+    region: oregon  # Change to your preferred region
+    plan: free      # Change to 'starter' or higher for production
+    rootDir: backend
+    buildCommand: yarn install
+    startCommand: node server.js
+    envVars:
+      - key: MONGO_URL
+        sync: false  # Set manually in Render dashboard
+      - key: DB_NAME
+        value: meat_shop
+      - key: CORS_ORIGINS
+        sync: false  # Set manually in Render dashboard
+      - key: ADMIN_PIN
+        sync: false  # Set manually in Render dashboard (default: 4242)
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 8001
+    healthCheckPath: /api/
+
+  # Frontend Static Site
+  - type: web
+    name: fresh-meat-hub-frontend
+    runtime: static
+    buildCommand: cd frontend && yarn install && yarn build
+    staticPublishPath: frontend/build
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: REACT_APP_BACKEND_URL
+        sync: false  # Set manually in Render dashboard

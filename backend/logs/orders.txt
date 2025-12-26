@@ -1,0 +1,52 @@
+
+=====================================
+Order ID: b5a69fb0-d379-4636-b409-2245f57d2e0b
+Date: 2025-12-19T09:11:53.156315+00:00
+Customer: ahisdih
+Phone: 7986955634
+Address: sdfasdfcas
+Pincode: 500001
+Items: chicken x1
+Total: ₹250.0
+Payment: Cash on Delivery
+Status: PENDING
+=====================================
+
+=====================================
+Order ID: 208e0a3b-3be0-4a85-9f78-5604350fb524
+Date: 2025-12-19T12:31:31.083Z
+Customer: Test Customer
+Phone: 9876543210
+Address: 123 Test Street
+Pincode: 500001
+Items: Chicken Breast x2
+Total: ₹598
+Payment: Cash on Delivery
+Status: PENDING
+=====================================
+
+=====================================
+Order ID: 67e5cdd9-c0ad-46f2-a287-9483c680e62a
+Date: 2025-12-19T12:37:13.656Z
+Customer: sdajdsd
+Phone: 7986955634
+Address: asdfasduh  dsf sdf jdsdsfds ds
+Pincode: 500001
+Items: Chicken Breast x1
+Total: ₹299
+Payment: Cash on Delivery
+Status: PENDING
+=====================================
+
+=====================================
+Order ID: d8315fd4-78bb-4e3e-9e4a-8d8296c6432a
+Date: 2025-12-22T08:55:22.210Z
+Customer: Test Customer
+Phone: 9876543210
+Address: 123 Test Street, Test Area
+Pincode: 144411
+Items: Chicken Breast x2
+Total: ₹500
+Payment: Cash on Delivery
+Status: PENDING
+=====================================

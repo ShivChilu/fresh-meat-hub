@@ -1,0 +1,59 @@
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+
+const CATEGORY_IMAGES = {
+  chicken: 'https://images.unsplash.com/photo-1584932894085-f095355f4c40?w=600&h=800&fit=crop',
+  mutton: 'https://images.pexels.com/photos/13640373/pexels-photo-13640373.jpeg?w=600&h=800&fit=crop',
+  others: 'https://images.unsplash.com/photo-1587279733259-26c7d2c0dba5?w=600&h=800&fit=crop',
+};
+
+const CATEGORY_DESCRIPTIONS = {
+  chicken: 'Fresh farm chicken, tender & juicy',
+  mutton: 'Premium quality goat meat',
+  others: 'Fish, Prawns, Eggs & more',
+};
+
+export const CategoryCard = ({ category, productCount = 0 }) => {
+  const categoryName = category.toLowerCase();
+  const image = CATEGORY_IMAGES[categoryName] || CATEGORY_IMAGES.others;
+  const description = CATEGORY_DESCRIPTIONS[categoryName] || 'Explore our selection';
+
+  return (
+    <Link
+      to={`/category/${categoryName}`}
+      className="category-card block aspect-[3/4] md:aspect-[4/5]"
+      data-testid={`category-card-${categoryName}`}
+    >
+      <img
+        src={image}
+        alt={category}
+        className="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
+      />
+      
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 category-gradient z-10" />
+      
+      {/* Content */}
+      <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
+        <div className="flex items-end justify-between">
+          <div>
+            <h3 className="font-heading font-bold text-2xl md:text-3xl text-white capitalize mb-1">
+              {category}
+            </h3>
+            <p className="text-white/80 text-sm mb-2">{description}</p>
+            {productCount > 0 && (
+              <p className="text-white/60 text-xs">{productCount} products</p>
+            )}
+          </div>
+          
+          <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+            <ArrowRight className="w-5 h-5 text-primary" />
+          </div>
+        </div>
+      </div>
+    </Link>
+  );
+};
+
+export default CategoryCard;
