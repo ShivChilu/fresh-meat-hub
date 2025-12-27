@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { ShoppingCart, Menu, X, Home, Grid3X3, Phone } from 'lucide-react';
 import { useState } from 'react';
 import { useCart } from '../context/CartContext';
+import { useCategories } from '../hooks/useCategories';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 import { Button } from './ui/button';
 import CartSheet from './CartSheet';
@@ -9,14 +10,18 @@ import CartSheet from './CartSheet';
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { getCartItemCount } = useCart();
+  const { categories } = useCategories();
   const location = useLocation();
   const cartCount = getCartItemCount();
 
+  // Build navigation links with dynamic categories
   const navLinks = [
     { name: 'Home', path: '/', icon: Home },
-    { name: 'Chicken', path: '/category/chicken', icon: Grid3X3 },
-    { name: 'Mutton', path: '/category/mutton', icon: Grid3X3 },
-    { name: 'Others', path: '/category/others', icon: Grid3X3 },
+    ...categories.map(cat => ({
+      name: cat.name.charAt(0).toUpperCase() + cat.name.slice(1),
+      path: `/category/${cat.name}`,
+      icon: Grid3X3
+    }))
   ];
 
   const isActive = (path) => {
