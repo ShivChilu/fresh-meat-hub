@@ -353,11 +353,58 @@ const AdminCategories = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
-                placeholder="e.g., Hyderabadi Biryani"
+                placeholder="e.g., Fish"
                 className="mt-1"
                 data-testid="input-category-name"
               />
               <p className="text-xs text-gray-500 mt-1">Enter the category name (will be converted to lowercase)</p>
+            </div>
+
+            {/* Description */}
+            <div>
+              <Label htmlFor="description">Description</Label>
+              <Input
+                id="description"
+                name="description"
+                value={formData.description}
+                onChange={handleInputChange}
+                placeholder="e.g., Fresh seafood & fish"
+                className="mt-1"
+                data-testid="input-category-description"
+              />
+              <p className="text-xs text-gray-500 mt-1">Brief description shown on category card</p>
+            </div>
+
+            {/* Cover Image Upload */}
+            <div>
+              <Label htmlFor="coverImage">Cover Image *</Label>
+              <div className="mt-1 space-y-2">
+                <Input
+                  id="coverImageFile"
+                  name="coverImageFile"
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                  disabled={uploadingImage}
+                  className="cursor-pointer"
+                  data-testid="input-cover-image"
+                />
+                <p className="text-xs text-gray-500">Upload an image (max 5MB) - jpg, png, webp</p>
+                
+                {uploadingImage && (
+                  <p className="text-sm text-blue-600">Uploading image...</p>
+                )}
+                
+                {formData.coverImage && (
+                  <div className="mt-2">
+                    <img 
+                      src={formData.coverImage} 
+                      alt="Cover preview" 
+                      className="w-full h-32 object-cover rounded-lg"
+                    />
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Display Order */}
@@ -388,6 +435,7 @@ const AdminCategories = () => {
               </Button>
               <Button
                 type="submit"
+                disabled={uploadingImage}
                 className="flex-1 bg-primary hover:bg-primary/90"
                 data-testid="save-category-btn"
               >
