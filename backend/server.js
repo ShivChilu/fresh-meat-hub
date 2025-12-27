@@ -46,6 +46,8 @@ const categorySchema = new mongoose.Schema({
   id: { type: String, default: () => uuidv4(), unique: true },
   name: { type: String, required: true, unique: true },
   displayOrder: { type: Number, default: 0 },
+  coverImage: { type: String, default: null },
+  description: { type: String, default: '' },
   createdAt: { type: String, default: () => new Date().toISOString() }
 }, { collection: 'categories', versionKey: false });
 
