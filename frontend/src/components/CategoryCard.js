@@ -36,7 +36,7 @@ export const CategoryCard = ({ category, productCount = 0 }) => {
     >
       <img
         src={image}
-        alt={category}
+        alt={categoryName}
         className="absolute inset-0 w-full h-full object-cover"
         loading="lazy"
       />
@@ -49,9 +49,9 @@ export const CategoryCard = ({ category, productCount = 0 }) => {
         <div className="flex items-end justify-between">
           <div>
             <h3 className="font-heading font-bold text-2xl md:text-3xl text-white capitalize mb-1">
-              {category}
+              {categoryName}
             </h3>
-            <p className="text-white/80 text-sm mb-2">{description}</p>
+            <p className="text-white/80 text-sm mb-2">{categoryDescription}</p>
             {productCount > 0 && (
               <p className="text-white/60 text-xs">{productCount} products</p>
             )}
