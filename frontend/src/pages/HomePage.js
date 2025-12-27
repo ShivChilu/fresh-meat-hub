@@ -26,13 +26,26 @@ const FEATURES = [
   },
 ];
 
-const CATEGORIES = ['chicken', 'mutton', 'others'];
-
 const HomePage = () => {
   const { products, loading } = useProducts();
+  const { categories, loading: categoriesLoading } = useCategories();
   
-  // Get featured products (first 4 in-stock products)
-  const featuredProducts = products.filter(p => p.inStock).slice(0, 4);
+  // Get featured products - first N products from each category
+  const getFeaturedProducts = () => {
+    const productsPerCategory = 2; // Show 2 products from each category
+    const featured = [];
+    
+    categories.forEach(category => {
+      const categoryProducts = products
+        .filter(p => p.category === category.name && p.inStock)
+        .slice(0, productsPerCategory);
+      featured.push(...categoryProducts);
+    });
+    
+    return featured;
+  };
+  
+  const featuredProducts = getFeaturedProducts();
 
   return (
     <div className="mobile-nav-padding" data-testid="home-page">
