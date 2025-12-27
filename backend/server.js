@@ -185,7 +185,7 @@ app.get('/api/categories/:category_id', async (req, res) => {
 
 // Create category (Admin)
 app.post('/api/categories', async (req, res) => {
-  const { name, displayOrder } = req.body;
+  const { name, displayOrder, coverImage, description } = req.body;
   
   if (!name || name.trim() === '') {
     return res.status(400).json({ detail: 'Category name is required' });
@@ -201,6 +201,8 @@ app.post('/api/categories', async (req, res) => {
     id: uuidv4(),
     name: name.trim().toLowerCase(),
     displayOrder: displayOrder || 0,
+    coverImage: coverImage || null,
+    description: description || '',
     createdAt: new Date().toISOString()
   };
   
