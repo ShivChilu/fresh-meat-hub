@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { 
   Package, Plus, Edit, Trash2, Save, X, ArrowLeft,
-  LayoutDashboard, ShoppingCart, LogOut, Menu, Grid3x3, ArrowUpDown
+  LayoutDashboard, ShoppingCart, LogOut, Menu, Grid3x3, ArrowUpDown, Upload
 } from 'lucide-react';
 import { Button } from '../../components/ui/button';
 import { Input } from '../../components/ui/input';
