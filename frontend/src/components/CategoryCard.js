@@ -1,22 +1,32 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
-const CATEGORY_IMAGES = {
+// Default placeholder image for categories without cover image
+const DEFAULT_CATEGORY_IMAGE = 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=600&h=800&fit=crop';
+
+const FALLBACK_CATEGORY_IMAGES = {
   chicken: 'https://images.unsplash.com/photo-1584932894085-f095355f4c40?w=600&h=800&fit=crop',
   mutton: 'https://images.pexels.com/photos/13640373/pexels-photo-13640373.jpeg?w=600&h=800&fit=crop',
   others: 'https://images.unsplash.com/photo-1587279733259-26c7d2c0dba5?w=600&h=800&fit=crop',
 };
 
-const CATEGORY_DESCRIPTIONS = {
+const FALLBACK_DESCRIPTIONS = {
   chicken: 'Fresh farm chicken, tender & juicy',
   mutton: 'Premium quality goat meat',
   others: 'Fish, Prawns, Eggs & more',
 };
 
 export const CategoryCard = ({ category, productCount = 0 }) => {
-  const categoryName = category.toLowerCase();
-  const image = CATEGORY_IMAGES[categoryName] || CATEGORY_IMAGES.others;
-  const description = CATEGORY_DESCRIPTIONS[categoryName] || 'Explore our selection';
+  // Handle both string (old) and object (new) category format
+  const categoryName = typeof category === 'string' ? category : category.name;
+  const categoryDescription = typeof category === 'string' 
+    ? FALLBACK_DESCRIPTIONS[categoryName.toLowerCase()] || 'Explore our selection'
+    : category.description || FALLBACK_DESCRIPTIONS[categoryName.toLowerCase()] || 'Explore our selection';
+  
+  // Use cover image from category object, fallback to predefined images, then default
+  const image = typeof category === 'string'
+    ? FALLBACK_CATEGORY_IMAGES[categoryName.toLowerCase()] || DEFAULT_CATEGORY_IMAGE
+    : category.coverImage || FALLBACK_CATEGORY_IMAGES[categoryName.toLowerCase()] || DEFAULT_CATEGORY_IMAGE;
 
   return (
     <Link
