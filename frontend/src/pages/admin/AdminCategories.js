@@ -62,6 +62,41 @@ const AdminCategories = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const handleImageUpload = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    // Validate file type
+    if (!file.type.startsWith('image/')) {
+      toast.error('Please upload an image file');
+      return;
+    }
+
+    // Validate file size (max 5MB)
+    if (file.size > 5 * 1024 * 1024) {
+      toast.error('Image size should be less than 5MB');
+      return;
+    }
+
+    try {
+      setUploadingImage(true);
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const response = await axios.post(`${API}/upload-image`, formData, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      });
+
+      setFormData(prev => ({ ...prev, coverImage: response.data.imageUrl }));
+      toast.success('Image uploaded successfully');
+    } catch (error) {
+      toast.error('Failed to upload image');
+      console.error(error);
+    } finally {
+      setUploadingImage(false);
+    }
+  };
+
   const openAddDialog = () => {
     setEditingCategory(null);
     setFormData({
