@@ -130,6 +130,8 @@ const AdminCategories = () => {
     const categoryData = {
       name: formData.name.trim(),
       displayOrder: parseInt(formData.displayOrder) || 0,
+      coverImage: formData.coverImage || null,
+      description: formData.description.trim() || '',
     };
 
     try {
