@@ -24,9 +24,12 @@ const AdminCategories = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [editingCategory, setEditingCategory] = useState(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [uploadingImage, setUploadingImage] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     displayOrder: '',
+    coverImage: '',
+    description: '',
   });
   const navigate = useNavigate();
 
