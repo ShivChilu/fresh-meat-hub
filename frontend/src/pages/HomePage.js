@@ -135,15 +135,23 @@ const HomePage = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {CATEGORIES.map((category) => (
-              <CategoryCard
-                key={category}
-                category={category}
-                productCount={products.filter(p => p.category === category).length}
-              />
-            ))}
-          </div>
+          {categoriesLoading ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="aspect-[3/4] md:aspect-[4/5] skeleton rounded-2xl" />
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {categories.map((category) => (
+                <CategoryCard
+                  key={category.id}
+                  category={category}
+                  productCount={products.filter(p => p.category === category.name).length}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
