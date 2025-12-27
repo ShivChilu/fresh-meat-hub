@@ -67,6 +67,8 @@ const AdminCategories = () => {
     setFormData({
       name: '',
       displayOrder: (categories.length + 1).toString(),
+      coverImage: '',
+      description: '',
     });
     setDialogOpen(true);
   };
@@ -76,6 +78,8 @@ const AdminCategories = () => {
     setFormData({
       name: category.name,
       displayOrder: category.displayOrder.toString(),
+      coverImage: category.coverImage || '',
+      description: category.description || '',
     });
     setDialogOpen(true);
   };
