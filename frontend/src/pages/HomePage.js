@@ -4,6 +4,7 @@ import { Button } from '../components/ui/button';
 import CategoryCard from '../components/CategoryCard';
 import ProductCard from '../components/ProductCard';
 import { useProducts } from '../hooks/useProducts';
+import { useCategories } from '../hooks/useCategories';
 
 const HERO_IMAGE = 'https://images.unsplash.com/photo-1591978108398-fbf8f7128bf0?w=1920&h=1080&fit=crop';
 
